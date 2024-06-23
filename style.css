@@ -1,0 +1,18 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');  */
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');  */
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+MX:wght@300&display=swap');
+
+
+[class^=title] {
+    font-family: 'Playwrite MX', sans-serif !important;
+    font-size: 36px;
+    font-weight: 600;
+    color: #091747;
+}
+
+html, body, [class^=st-emotion] {
+    font-family: 'Playwrite MX', sans-serif !important;
+    font-size: 18px;
+    font-weight: 400;
+    color: #091747;
+}
