@@ -2,17 +2,24 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');  */
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+MX:wght@300&display=swap');
 
+@font-face {
+    font-family: 'Typo';
+    src:
+        local("Typo")
+        /* url('./Typo.ttf') format('type'),
+        url('./Typo.woff') format('woff'); */
+}
 
-[class^=title] {
-    font-family: 'Playwrite MX', sans-serif !important;
+/* [class^=title] {
+    font-family: 'Typo', !important;
     font-size: 36px;
     font-weight: 600;
     color: #091747;
-}
+} */
 
-html, body, [class^=st-emotion] {
+[class^=title] {
     font-family: 'Playwrite MX', sans-serif !important;
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 28px;
+    font-weight: 500;
     color: #091747;
 }

@@ -30,18 +30,20 @@ if __name__ == "__main__":
         page_title="Maddi e Giulio",
         page_icon=":smile:",
         layout="centered",
-        initial_sidebar_state="collapsed",
     )
 
     if "names" not in st.session_state:
         st.session_state["names"] = ["Maddi Giulio"]
 
-    with open("style.css") as css:
+    with open("./style/style.css") as css:
         st.markdown(f"<style>{css.read()}</style>", unsafe_allow_html=True)
+
+    with st.sidebar:
+        st.write("ciao")
 
     _, mid_col, _ = st.columns([1, 1, 1])
     with mid_col:
-        st.write("<div class=title>Ci sposiamo!</div>", unsafe_allow_html=True)
+        st.markdown("<div class=title>Ci sposiamo!</div>", unsafe_allow_html=True)
 
     st.markdown("Fai un regalo qui:")
     st.markdown("## IT XXXX 000111222")
@@ -55,17 +57,26 @@ if __name__ == "__main__":
 
     mask = np.array(Image.open("./casa_mask.png"))
     wc = WordCloud(
+        # font_path=path/to/font
         width=3000,
         height=2000,
         max_words=40,
         random_state=1,
         background_color="white",
-        colormap="PuBu_r",  # Change this to change text colors: see here: https://www.kaggle.com/code/niteshhalai/wordcloud-colormap
+        contour_color="black",
+        contour_width=1,
+        colormap="OrRd_r",  # Change this to change text colors: see here: https://www.kaggle.com/code/niteshhalai/wordcloud-colormap
         collocations=True,
         normalize_plurals=True,
         mask=mask,
     )
     fig = wc.generate(" ".join(st.session_state["names"]))
+    # fig = wc.to_image()
+
+    # contour = draw_contour(wc.to_image(), wc.mask, 1, 'black')
+    # print(contour)
+    # contour.show()
+
     plt.figure(figsize=(80, 60), frameon=False)
     plt.imshow(fig)
     plt.axis("off")
