@@ -3,23 +3,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+MX:wght@300&display=swap');
 
 @font-face {
-    font-family: 'Typo';
+    font-family: "Typo";
+    font-face-name: "Typo";
     src:
         local("Typo")
         /* url('./Typo.ttf') format('type'),
         url('./Typo.woff') format('woff'); */
 }
 
-/* [class^=title] {
-    font-family: 'Typo', !important;
-    font-size: 36px;
+[class^=title] {
+    font-family: 'Typo', sans-serif !important;
+    font-size: 28px;
     font-weight: 600;
     color: #091747;
-} */
+}
 
-[class^=title] {
+/* [class^=title] {
     font-family: 'Playwrite MX', sans-serif !important;
     font-size: 28px;
     font-weight: 500;
     color: #091747;
-}
+} */
