@@ -12,6 +12,7 @@ matplotlib = "^3.9.0"
 wordcloud = "^1.9.3"
 pillow = "^10.3.0"
 numpy = "<2.0.0"
+psqlpandas = "^1.6.4"
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^2.20.0"
