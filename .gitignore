@@ -137,3 +137,5 @@ dmypy.json
 *.xlsx
 *.xls
 *.txt
+
+.streamlit/secrets.toml

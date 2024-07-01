@@ -32,8 +32,10 @@ if __name__ == "__main__":
         layout="centered",
     )
 
-    if "names" not in st.session_state:
-        st.session_state["names"] = ["Maddi Giulio"]
+    db_conn = st.connection("postgresql", type="sql")
+
+    # if "names" not in st.session_state:
+    #     st.session_state["names"] = ["Maddi Giulio"]
 
     with open("./style/style.css") as css:
         st.markdown(f"<style>{css.read()}</style>", unsafe_allow_html=True)
@@ -48,7 +50,9 @@ if __name__ == "__main__":
     st.markdown("Fai un regalo qui:")
     st.markdown("## IT XXXX 000111222")
 
-    text = "Maddi Giulio Mattia Detta Gio Ermi Lele Franci Tommi Nico Fede Andrea Grazia Chiara Giulia Martina Sara Mattia Francesco Marco Matteo Alice Erica Giovanna Anna"
+    df = db_conn.query("SELECT * FROM names;", ttl="10m")
+    text = df["name"].str.capitalize().to_list()
+    print(text)
 
     st.write("Se hai fatto un regalo, aggiungi il tuo nome.")
     add_names_button = st.button("Aggiungi il tuo nome")
@@ -70,12 +74,7 @@ if __name__ == "__main__":
         normalize_plurals=True,
         mask=mask,
     )
-    fig = wc.generate(" ".join(st.session_state["names"]))
-    # fig = wc.to_image()
-
-    # contour = draw_contour(wc.to_image(), wc.mask, 1, 'black')
-    # print(contour)
-    # contour.show()
+    fig = wc.generate(" ".join(text))
 
     plt.figure(figsize=(80, 60), frameon=False)
     plt.imshow(fig)
