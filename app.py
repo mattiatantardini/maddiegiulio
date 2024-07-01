@@ -4,6 +4,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 from PIL import Image
 from wordcloud import WordCloud
+from psqlpandas.postgresql import PostgresqlDatabaseConnector
+
+from settings.config import (
+    POSTGRES_DBNAME,
+    POSTGRES_HOST,
+    POSTGRES_PORT,
+    POSTGRES_PWD,
+    POSTGRES_USER,
+)
 
 
 @st.experimental_dialog("Aggiungi persone")
@@ -32,7 +41,13 @@ if __name__ == "__main__":
         layout="centered",
     )
 
-    db_conn = st.connection("postgresql", type="sql")
+    db_conn = PostgresqlDatabaseConnector(
+        dbname=POSTGRES_DBNAME,
+        host=POSTGRES_HOST,
+        user=POSTGRES_USER,
+        port=POSTGRES_PORT,
+        password=POSTGRES_PWD,
+    )
 
     # if "names" not in st.session_state:
     #     st.session_state["names"] = ["Maddi Giulio"]
@@ -50,7 +65,7 @@ if __name__ == "__main__":
     st.markdown("Fai un regalo qui:")
     st.markdown("## IT XXXX 000111222")
 
-    df = db_conn.query("SELECT * FROM names;", ttl="10m")
+    df = db_conn.read_df("SELECT name FROM names")
     text = df["name"].str.capitalize().to_list()
     print(text)
 
