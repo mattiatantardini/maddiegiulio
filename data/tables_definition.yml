@@ -1,0 +1,16 @@
+tables:
+  [
+    {
+      tablename: names,
+      schema: public,
+      drop_if_exists: False,
+      primary_key: {cols: ["UID"]},
+      columns:
+        {
+          UID: VARCHAR(3),
+          NAME: VARCHAR(200),
+          MESSAGE: TEXT,
+          DATE_SAVED: TIMESTAMP,
+        }
+    }
+  ]
