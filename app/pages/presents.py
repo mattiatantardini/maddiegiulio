@@ -33,7 +33,7 @@ def get_connection():
 def generate_wordcloud(names):
     mask = np.array(Image.open("resources/images/casa_maddiegiulio_nera_ok.png"))
     wc = WordCloud(
-        font_path="style/Typo.ttf",
+        font_path="resources/fonts/Typo.ttf",
         width=3000,
         height=2000,
         max_words=40,

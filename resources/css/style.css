@@ -1,8 +1,8 @@
 @font-face {
-    font-family: "Typo";
-    font-face-name: "Typo";
-    src:
-        local("Typo")
+    font-family: 'Typo';
+    src: url('assets/fonts/typo-webfont.woff2') format('woff2'),
+         url('assets/fonts/typo-webfont.woff') format('woff'),
+         url('assets/fonts/Typo.ttf') format('truetype');
 }
 
 [class^=title] {
