@@ -84,31 +84,32 @@ def presents():
     db_conn = get_connection()
 
     last_uid = int(db_conn.read("SELECT max(uid) FROM NAMES")[0][0])
-
-    styled_write(
-        "Questo e' il nostro IBAN (non usiamo la e accentata se possibile, non c'è nel font):",
-        centered=True,
-        add_space_after=True,
-    )
-    styled_write(
-        "IT00001111122222",
-        centered=True,
-        custom_font_class="title",
-        add_space_after=True,
-    )
-    styled_write(
-        "Se hai fatto un regalo, aggiungi il tuo nome.",
-        centered=True,
-        add_space_after=True,
-    )
-    add_names_button = st.button("Aggiungi il tuo nome", use_container_width=True)
-    if add_names_button:
-        add_names(last_uid, db_conn)
-
     df = db_conn.read_df("SELECT name FROM names")
     names = df["name"].str.split(" ").explode().str.capitalize().to_list()
-    # Cleaning
+    # Cleaning (removes 1-character words)
     names = [n for n in names if len(n) > 1]
 
     generate_wordcloud(" ".join(names))
     st.image("resources/images/home_wordcloud.png", use_column_width="always")
+
+    styled_write(
+        "Se ti va, puoi aiutarci a costruire un pezzetto di casa.",
+        centered=True,
+    )
+    styled_write(
+        "Grazie fin da ora!",
+        centered=True,
+        add_space_after=True,
+    )
+    styled_write(
+        "IT71N0306951270100000061566",
+        centered=True,
+        custom_font_class="title",
+        add_space_after=True,
+    )
+
+    add_names_button = st.button(
+        "Aggiungi il tuo nome alla casa", use_container_width=True
+    )
+    if add_names_button:
+        add_names(last_uid, db_conn)

@@ -1,17 +1,17 @@
 import streamlit as st
 from tantaroba.log import configure_logging
 
-from app.pages.info import info
+from app.pages.cerimony import cerimony
 from app.pages.presents import presents
 
 
 if __name__ == "__main__":
     configure_logging()
 
-    info_page = st.Page(info, title="Informazioni")
-    presents_page = st.Page(presents, title="Fai un regalo")
+    cerimony_page = st.Page(cerimony, title="Cerimonia")
+    presents_page = st.Page(presents, title="Facci un regalo :)")
 
-    current_page = st.navigation(pages={"Your title here": [info_page, presents_page]})
+    current_page = st.navigation(pages=[cerimony_page, presents_page])
     st.set_page_config(
         page_title="Maddi e Giulio",
         page_icon=":fallen_leaf:",

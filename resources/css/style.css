@@ -5,18 +5,28 @@
     font-family: 'Annie Use Your Telescope', sans-serif !important;
     /* font-family: 'Love Ya Like A Sister', sans-serif !important; */
     font-size: 46px;
-    font-weight: 700;
+    font-weight: 800;
     color: #091747;
 }
 
+[class^=citation] {
+    font-family: 'Annie Use Your Telescope', sans-serif !important;
+    /* font-family: 'Love Ya Like A Sister', sans-serif !important; */
+    font-size: 32px;
+    font-weight: 700;
+    color: #f0684a;
+}
+
+/* (Almost) Everything */
 [class^=st-emotion] {
     font-family: 'Annie Use Your Telescope', sans-serif !important;
     /* font-family: 'Love Ya Like A Sister', sans-serif !important; */
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 550;
     color: #091747;
 }
 
+/* Title of dialog */
 [class^=st-emotion-cache-oq308l] {
     font-family: 'Annie Use Your Telescope', sans-serif !important;
     /* font-family: 'Love Ya Like A Sister', sans-serif !important; */
