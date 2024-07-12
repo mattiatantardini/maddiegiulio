@@ -1,33 +1,33 @@
-@font-face {
-    font-family: 'Typo';
-    src: url('assets/fonts/typo-webfont.woff2') format('woff2'),
-         url('assets/fonts/typo-webfont.woff') format('woff'),
-         url('assets/fonts/Typo.ttf') format('truetype');
-}
+@import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap');  */
 
 [class^=title] {
-    font-family: 'Typo', sans-serif !important;
-    font-size: 28px;
+    font-family: 'Annie Use Your Telescope', sans-serif !important;
+    /* font-family: 'Love Ya Like A Sister', sans-serif !important; */
+    font-size: 46px;
     font-weight: 700;
     color: #091747;
 }
 
 [class^=st-emotion] {
-    font-family: 'Typo', sans-serif !important;
-    font-size: 14px;
+    font-family: 'Annie Use Your Telescope', sans-serif !important;
+    /* font-family: 'Love Ya Like A Sister', sans-serif !important; */
+    font-size: 20px;
     font-weight: 550;
     color: #091747;
 }
 
 [class^=st-emotion-cache-oq308l] {
-    font-family: 'Typo', sans-serif !important;
-    font-size: 18px;
+    font-family: 'Annie Use Your Telescope', sans-serif !important;
+    /* font-family: 'Love Ya Like A Sister', sans-serif !important; */
+    font-size: 26px;
     font-weight: 600;
     color: #091747;
 }
 
 [class^=st-cc] {
-    font-family: 'Typo', sans-serif !important;
+    font-family: 'Annie Use Your Telescope', sans-serif !important;
+    /* font-family: 'Love Ya Like A Sister', sans-serif !important; */
     font-size: 18px;
     font-weight: 600;
     color: #091747;
