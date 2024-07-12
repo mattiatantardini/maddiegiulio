@@ -42,3 +42,7 @@
     font-weight: 600;
     color: #091747;
 }
+
+div[data-testid="InputInstructions"] > span:nth-child(1) {
+    visibility: hidden;
+}
