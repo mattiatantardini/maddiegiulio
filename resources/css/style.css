@@ -5,7 +5,7 @@
     font-family: 'Annie Use Your Telescope', sans-serif !important;
     /* font-family: 'Love Ya Like A Sister', sans-serif !important; */
     font-size: 46px;
-    font-weight: 800;
+    font-weight: 750;
     color: #091747;
 }
 
@@ -13,7 +13,7 @@
     font-family: 'Annie Use Your Telescope', sans-serif !important;
     /* font-family: 'Love Ya Like A Sister', sans-serif !important; */
     font-size: 32px;
-    font-weight: 700;
+    font-weight: 650;
     color: #f0684a;
 }
 
@@ -21,13 +21,13 @@
 [class^=st-emotion] {
     font-family: 'Annie Use Your Telescope', sans-serif !important;
     /* font-family: 'Love Ya Like A Sister', sans-serif !important; */
-    font-size: 24px;
+    font-size: 23px;
     font-weight: 550;
     color: #091747;
 }
 
 /* Title of dialog */
-[class^=st-emotion-cache-oq308l] {
+[class^=st-br] {
     font-family: 'Annie Use Your Telescope', sans-serif !important;
     /* font-family: 'Love Ya Like A Sister', sans-serif !important; */
     font-size: 26px;
@@ -35,10 +35,10 @@
     color: #091747;
 }
 
-[class^=st-cc] {
+[class^=iban] {
     font-family: 'Annie Use Your Telescope', sans-serif !important;
     /* font-family: 'Love Ya Like A Sister', sans-serif !important; */
-    font-size: 18px;
+    font-size: 26px;
     font-weight: 600;
     color: #091747;
 }

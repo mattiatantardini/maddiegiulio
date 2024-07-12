@@ -99,12 +99,11 @@ def presents():
     styled_write(
         "Grazie fin da ora!",
         centered=True,
-        add_space_after=True,
     )
     styled_write(
         "IT71N0306951270100000061566",
         centered=True,
-        custom_font_class="title",
+        custom_font_class="iban",
         add_space_after=True,
     )
 
