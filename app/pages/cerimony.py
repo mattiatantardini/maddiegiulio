@@ -40,6 +40,3 @@ def cerimony():
     st.write("")
     st.write("")
     st.write("")
-
-    if st.button("Festeggia con noi!", use_container_width=True):
-        st.balloons()
