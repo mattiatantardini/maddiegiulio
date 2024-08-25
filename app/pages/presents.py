@@ -63,7 +63,7 @@ def add_names(last_id: int, db_conn: PostgresqlDatabaseConnector):
         name = st.text_input("Inserisci il tuo nome")
         st.write("Se vuoi, lascia un messaggio per gli sposi:")
         message = st.text_area("Inserisci il tuo messaggio")
-        ok = st.form_submit_button("Salva")
+        ok = st.form_submit_button("Salva", use_container_width=True)
         if ok:
             new_row = pd.DataFrame(
                 data={
