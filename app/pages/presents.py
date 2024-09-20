@@ -54,7 +54,7 @@ def generate_wordcloud(names):
     plt.savefig("resources/images/home_wordcloud.png")
 
 
-@st.experimental_dialog("Costruisci la casa")
+@st.dialog("Costruisci la casa")
 def add_names(last_id: int, db_conn: PostgresqlDatabaseConnector):
     with st.form("new_name"):
         st.write(
