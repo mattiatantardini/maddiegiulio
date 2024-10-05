@@ -1,16 +1,17 @@
 tables:
   [
     {
-      tablename: names,
+      tablename: names_new,
       schema: public,
       drop_if_exists: False,
       primary_key: {cols: ["UID"]},
       columns:
         {
-          UID: VARCHAR(3),
+          UID: SERIAL,
           NAME: VARCHAR(200),
           MESSAGE: TEXT,
           DATE_SAVED: TIMESTAMP,
         }
-    }
+    },
+
   ]

@@ -1,7 +1,6 @@
 import datetime
 
 import streamlit as st
-import pandas as pd
 import numpy as np
 from PIL import Image
 import matplotlib.pyplot as plt
@@ -55,7 +54,7 @@ def generate_wordcloud(names):
 
 
 @st.dialog("Costruisci la casa")
-def add_names(last_id: int, db_conn: PostgresqlDatabaseConnector):
+def add_names(db_conn: PostgresqlDatabaseConnector):
     with st.form("new_name"):
         st.write(
             "Scrivi il tuo nome (se siete in più di uno, scrivi i nomi separati da spazi):"
@@ -65,17 +64,11 @@ def add_names(last_id: int, db_conn: PostgresqlDatabaseConnector):
         message = st.text_area("Inserisci il tuo messaggio")
         ok = st.form_submit_button("Salva", use_container_width=True)
         if ok:
-            new_row = pd.DataFrame(
-                data={
-                    "uid": last_id + 1,
-                    "name": name,
-                    "message": message,
-                    "date_saved": datetime.datetime.now(),
-                },
-                index=[0],
-            )
             with st.spinner("Salvataggio in corso"):
-                db_conn.insert_from_df("names", new_row)
+                db_conn.execute_sql_query(
+                    "INSERT INTO names_new (name, message, date_saved) VALUES (%s, %s, %s)",
+                    (name, message, datetime.datetime.now()),
+                )
             st.rerun()
 
 
@@ -83,8 +76,7 @@ def presents():
 
     db_conn = get_connection()
 
-    last_uid = int(db_conn.read("SELECT max(uid) FROM NAMES")[0][0])
-    df = db_conn.read_df("SELECT name FROM names")
+    df = db_conn.read_df("SELECT name FROM names_new")
     names = df["name"].str.split(" ").explode().str.capitalize().to_list()
     # Cleaning (removes 1-character words)
     names = [n for n in names if len(n) > 1]
@@ -111,4 +103,4 @@ def presents():
         "Aggiungi il tuo nome alla casa", use_container_width=True
     )
     if add_names_button:
-        add_names(last_uid, db_conn)
+        add_names(db_conn)
